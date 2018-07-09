@@ -27,9 +27,9 @@ public class StartOrder {
     private String cliKey = "aec9813472954766897c74a55815d4e1";
 
 
-    Stage stage;
-    String sesId;
-    String login;
+    private Stage stage;
+    private String sesId;
+    private String login;
 
     //@FXML
     //private TextField edLogin;
