@@ -55,7 +55,7 @@ public class LoginCL {
                 String result = EntityUtils.toString(respEntity);
 
                 Resp resp = GSON.fromJson(result, Resp.class);
-
+                System.out.println(result);
                 if (!resp.getError() && !resp.getResult().getUser().getIsBlocked()) {
                     return resp;
                 }

@@ -6,12 +6,7 @@ public class Result {
     private String sessionId;
     private User user;
 
-    public String getSessionId() {
-        return sessionId;
-    }
-    public User getUser() {
-        return user;
-    }
+
 
     private String _id;
     private String addressCustomer;
@@ -42,6 +37,10 @@ public class Result {
     public void setNameOrder(String nameOrder) {
         this.nameOrder = nameOrder;
     }
+
+    public String getSessionId() { return sessionId;}
+
+    public User getUser() { return user;}
 
     public String getAddressCustomer() {
         return addressCustomer;

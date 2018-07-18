@@ -291,6 +291,7 @@ public class StartOrderControllerFX  extends javafx.event.ActionEvent{
         this.idCustomer = idCustomer;
         sesId = ses;
         this.login = login;
+        System.out.println(idCustomer);
         edNumberCustomer.setText(login);
         initialize();
     }
