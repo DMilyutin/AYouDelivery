@@ -1,17 +1,7 @@
-package Helperss;
-
-public class Result {
+package ru.youdelivery.Helperss;
 
 
-    private String sessionId;
-    private User user;
-
-    public String getSessionId() {
-        return sessionId;
-    }
-    public User getUser() {
-        return user;
-    }
+public class Doc {
 
     private String _id;
     private String addressCustomer;
@@ -26,6 +16,30 @@ public class Result {
     private String statusOrder;
     private String timeFilingCustomer;
     private String nameOrder;
+    private String idForWorkBalashiha;
+
+
+
+    public Doc(){}
+
+    public Doc(String addressCustomer, String addressForDriver, String coastOrder, String idCustomer,
+               String nameCustomer, String nameForDriver, String numberOfAddresses, String phoneCustomer,
+               String phoneForDriver, String statusOrder, String timeFilingCustomer, String nameOrder) {
+        this.addressCustomer = addressCustomer;
+        this.addressForDriver = addressForDriver;
+        this.coastOrder = coastOrder;
+        this.idCustomer = idCustomer;
+        this.nameCustomer = nameCustomer;
+        this.nameForDriver = nameForDriver;
+        this.numberOfAddresses = numberOfAddresses;
+        this.phoneCustomer = phoneCustomer;
+        this.phoneForDriver = phoneForDriver;
+        this.statusOrder = statusOrder;
+        this.timeFilingCustomer = timeFilingCustomer;
+        this.nameOrder = nameOrder;
+
+
+    }
 
     public String get_id() {
         return _id;
@@ -131,4 +145,12 @@ public class Result {
         this.timeFilingCustomer = timeFilingCustomer;
     }
 
+    public String getIdForWorkBalashiha() {
+        return idForWorkBalashiha;
+    }
+
+    public void setIdForWorkBalashiha(String idForWorkBalashiha) {
+        this.idForWorkBalashiha = idForWorkBalashiha;
+    }
 }
+

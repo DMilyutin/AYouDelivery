@@ -1,4 +1,4 @@
-package Helperss;
+package ru.youdelivery.Helperss;
 
 public class User {
 

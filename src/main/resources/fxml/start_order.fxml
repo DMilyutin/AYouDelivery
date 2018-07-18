@@ -11,10 +11,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllersFX.StartOrderControllerFX">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.youdelivery.ControllersFX.StartOrderControllerFX">
    <children>
-      <Button layoutX="268.0" layoutY="496.0" mnemonicParsing="false" onAction="#sendOrder" prefHeight="39.0" prefWidth="96.0" text="Заказать" />
-      <TextField layoutX="14.0" layoutY="14.0" promptText="Название заказа" />
+      <Button layoutX="707.0" layoutY="343.0" mnemonicParsing="false" onAction="#sendOrder" prefHeight="39.0" prefWidth="96.0" text="Заказать" />
+      <TextField fx:id="edNameOrder" layoutX="14.0" layoutY="14.0" promptText="Название заказа" />
       <TextField fx:id="edNameCustomer" layoutX="14.0" layoutY="52.0" promptText="Имя заказчика" />
       <TextField fx:id="edNumberCustomer" layoutX="14.0" layoutY="90.0" promptText="Номер заказчика" />
       <TextField fx:id="edAddressCustomer" layoutX="14.0" layoutY="128.0" promptText="Адрес заказчика" />
@@ -28,33 +28,39 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="edMatcAddress" layoutX="311.0" layoutY="166.0" prefHeight="31.0" prefWidth="44.0" />
-      <TextField fx:id="edTime" layoutX="268.0" layoutY="203.0" prefHeight="31.0" prefWidth="85.0" />
+      <TextField fx:id="edMatcAddress" layoutX="301.0" layoutY="165.0" prefHeight="31.0" prefWidth="44.0" />
+      <TextField fx:id="edTime" layoutX="259.0" layoutY="199.0" prefHeight="31.0" prefWidth="85.0" />
       <CheckBox fx:id="chTimeNow" layoutX="165.0" layoutY="205.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Сейчас">
          <font>
             <Font name="Jamrul" size="14.0" />
          </font></CheckBox>
-      <Label layoutX="148.0" layoutY="502.0" prefHeight="27.0" prefWidth="54.0" text="Цена">
+      <Label layoutX="545.0" layoutY="349.0" prefHeight="27.0" prefWidth="54.0" text="Цена">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="tvCoastOrder" alignment="CENTER_RIGHT" layoutX="200.0" layoutY="505.0" prefHeight="21.0" prefWidth="34.0" text="30">
+      <Label fx:id="tvRecomendCoastOrder" alignment="CENTER_RIGHT" layoutX="638.0" layoutY="301.0" prefHeight="21.0" prefWidth="34.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="233.0" layoutY="505.0" prefHeight="21.0" prefWidth="14.0" text="Р">
+      <Label layoutX="672.0" layoutY="349.0" prefHeight="27.0" prefWidth="0.0" text="Р">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="386.0" layoutY="15.0" prefHeight="520.0" prefWidth="350.0">
+      <TableView fx:id="tableCustomers" editable="true" layoutX="376.0" layoutY="14.0" prefHeight="245.0" prefWidth="465.0">
         <columns>
-          <TableColumn prefWidth="39.0" text="№" />
-          <TableColumn prefWidth="108.0" text="Адрес" />
-            <TableColumn prefWidth="238.0" text="Телефон" />
+          <TableColumn id="number" fx:id="tableCulumnNum" prefWidth="39.0" text="N" />
+          <TableColumn id="addreess" fx:id="tableCulumnAddress" prefWidth="271.0" text="Адрес" />
+            <TableColumn id="phone" fx:id="tableCulumnPhone" prefWidth="148.0" text="Телефон" />
         </columns>
       </TableView>
+      <TextField fx:id="etCoastCustomer" layoutX="598.0" layoutY="343.0" prefHeight="39.0" prefWidth="70.0" />
+      <Label layoutX="471.0" layoutY="396.0" prefHeight="27.0" prefWidth="334.0" text="Минимальная цена 120р за один адрес">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
