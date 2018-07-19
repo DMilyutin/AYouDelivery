@@ -20,8 +20,6 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         String fxmlFile = "/fxml/login.fxml";
         FXMLLoader loader = new FXMLLoader();
-
-        //Parent root = loader.load(getClass().getResource("/fxml/login.fxml"));
         Parent root = loader.load(getClass().getResourceAsStream(fxmlFile));
         primaryStage.setTitle("YouDelivery");
         primaryStage.setResizable(false);

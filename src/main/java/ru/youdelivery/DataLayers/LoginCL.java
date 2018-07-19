@@ -1,5 +1,6 @@
 package ru.youdelivery.DataLayers;
 
+import javafx.concurrent.Task;
 import ru.youdelivery.Helperss.Resp;
 
 import com.google.gson.Gson;
@@ -13,10 +14,13 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Exchanger;
 
-public class LoginCL {
+public class LoginCL  {
 
     private HttpResponse response;
+
 
    private String appKey = "c312b5a7b1794220a85b89079250e64e";
    private String cliKey = "aec9813472954766897c74a55815d4e1";
@@ -25,7 +29,11 @@ public class LoginCL {
 
 
 
-    public Resp aurorization(String login, String pass) {
+
+
+
+
+    public Resp aurorization(String login) {
 
 
 
@@ -79,5 +87,8 @@ public class LoginCL {
     public void setResponse(HttpResponse response) {
         this.response = response;
     }
+
+
+
 }
 

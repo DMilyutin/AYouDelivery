@@ -1,5 +1,7 @@
 package ru.youdelivery.ControllersFX;
 
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import ru.youdelivery.Helperss.Custors;
 import ru.youdelivery.Helperss.Doc;
 import ru.youdelivery.Helperss.Resp;
@@ -141,7 +143,7 @@ public class StartOrderControllerFX  extends javafx.event.ActionEvent{
             return null;}
 
         String numAdress = edMatcAddress.getText();
-        int mumAddress =-1;
+        int mumAddress;
 
         if (numAdress.equals("")||numAdress.isEmpty()) {
             showAlertError("Укажите кол-во адресов");
@@ -179,9 +181,17 @@ public class StartOrderControllerFX  extends javafx.event.ActionEvent{
         }
 
         String coastOrder = etCoastCustomer.getText();
-        if(coastOrder.equals("")||coastOrder.isEmpty()){
-            coastOrder= String.valueOf(coastOneAddress*mumAddress);
+        if(!(coastOrder.equals("")||coastOrder.isEmpty())){
+            int coast = Integer.parseInt(coastOrder);
+            if (coast<120){
+                showAlertError("Стоимость ");
+                return null;
+            }
+            else {coastOrder= String.valueOf(coast*mumAddress);}
         }
+        else {coastOrder= String.valueOf(coastOneAddress*mumAddress);}
+
+
 
         Doc doc = new Doc(addressCustomer, adresses, coastOrder, idCustomer, nameCustomer
                 , "Не указано", numAdress, phoneCustomer,
@@ -197,7 +207,7 @@ public class StartOrderControllerFX  extends javafx.event.ActionEvent{
 
         Doc doc = prepearNewDoc();
         J j = new J(appKey, cliKey, accKey, sesId, COLLECTION_FOR_WORK_BALASHIHA, doc);
-        if (doc != null){}
+        if (doc != null)
          addNewOrderOnServer(j, 1, doc);
 
     }
@@ -230,13 +240,12 @@ public class StartOrderControllerFX  extends javafx.event.ActionEvent{
                     addNewOrderOnServer(j2, 2, doc);
                 }
                 if(i == 2){
+                    System.out.println(doc.getCoastOrder());
                     clearForms();
-                    showAlertWithoutHeaderText("Заказ успешно создан");
+                    showAlertWithoutHeaderText("Заказ успешно создан! Стоимость заказа " + doc.getCoastOrder()+"Р");
                     return;
 
                 }
-
-                System.out.println(result);
 
             } else {showAlertError("Код ошибки " + code);}
 
@@ -250,6 +259,7 @@ public class StartOrderControllerFX  extends javafx.event.ActionEvent{
 
     private void showAlertWithoutHeaderText(String text) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("/ic/YD-256.png"));
         alert.setTitle("Формирование заказа");
         alert.setHeaderText(null);
         alert.setContentText(text);
@@ -258,6 +268,7 @@ public class StartOrderControllerFX  extends javafx.event.ActionEvent{
 
     private void showAlertError(String text) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("/ic/YD-256.png"));
         alert.setTitle("Формирование заказа");
         alert.setHeaderText(null);
         alert.setContentText(text);
